@@ -1,0 +1,19 @@
+{
+  "name": "reservation-service",
+  "version": "1.0.0",
+  "description": "Servicio de Reservas - proveedor de informacion de reservas de salas",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "jest --runInBand",
+    "verify": "node pact/verify.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@pact-foundation/pact": "^12.5.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}

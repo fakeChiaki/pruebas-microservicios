@@ -1,0 +1,21 @@
+{
+  "name": "pruebas-microservicios",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sistema de Reservas de Salas - pruebas de contrato (Pact) entre microservicios",
+  "workspaces": [
+    "reservation-service",
+    "user-portal",
+    "admin-service"
+  ],
+  "scripts": {
+    "test:reservation": "npm run test --workspace=reservation-service",
+    "test:portal": "npm run test --workspace=user-portal",
+    "test:admin": "npm run test --workspace=admin-service",
+    "test:consumers": "npm run test:portal && npm run test:admin",
+    "verify:reservation": "npm run verify --workspace=reservation-service",
+    "start:reservation": "npm run start --workspace=reservation-service",
+    "start:portal": "npm run start --workspace=user-portal",
+    "start:admin": "npm run start --workspace=admin-service"
+  }
+}

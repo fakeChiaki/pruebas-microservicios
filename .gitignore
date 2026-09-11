@@ -1,0 +1,11 @@
+node_modules/
+npm-debug.log*
+
+# Pact tooling artifacts (the contracts themselves in ./pacts ARE committed)
+logs/
+*.log
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
