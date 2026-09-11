@@ -1,0 +1,27 @@
+services:
+  reservation-service:
+    build: ./reservation-service
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+
+  user-portal:
+    build: ./user-portal
+    ports:
+      - "3002:3002"
+    environment:
+      - PORT=3002
+      - RESERVATION_SERVICE_URL=http://reservation-service:3001
+    depends_on:
+      - reservation-service
+
+  admin-service:
+    build: ./admin-service
+    ports:
+      - "3003:3003"
+    environment:
+      - PORT=3003
+      - RESERVATION_SERVICE_URL=http://reservation-service:3001
+    depends_on:
+      - reservation-service
