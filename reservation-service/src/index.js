@@ -1,5 +1,6 @@
 const express = require('express');
 const reservationRoutes = require('./routes/reservationRoutes');
+const providerStateRoutes = require('./routes/providerStateRoutes');
 
 const app = express();
 app.use(express.json());
@@ -9,6 +10,7 @@ app.get('/health', (req, res) => {
 });
 
 app.use(reservationRoutes);
+app.use(providerStateRoutes);
 
 const PORT = process.env.PORT || 3001;
 if (require.main === module) {
